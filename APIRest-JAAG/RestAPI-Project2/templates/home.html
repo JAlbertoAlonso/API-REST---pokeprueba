@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=+, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style1.css')}}">
+    <link rel="icon" href="{{url_for('static', filename='img/pixel.jpg')}}">
+
+</head>
+<body>
+    <div class="login-box">
+        <img class="avatar" src="{{url_for('static', filename='img/masterball.png')}}" alt="masterball">
+        <h1>Enter here traveler...</h1>
+        <form action="/pokedex" method="POST">
+            <!-- Usuario -->
+            <label for="username">User</label>
+            <input type="text" name="username" placeholder="Enter user" autofocus>
+
+            <!-- Contraseña -->
+            <label for="email">email</label>
+            <input type="text" name="email" placeholder="@example.com">
+
+            <input type="submit" value="Enter">
+
+            <!-- <p>Instrucciones: crea un usuario y contraseña para Ingresar</p> -->
+
+            <!-- <a href="#">¿Olvidaste contraseña?</a> -->
+            <h5>INSTRUCTIONS: write a username and email address, and enter.</h5>
+            <!-- <a href="{{url_for('static', filename='css/style1.css')}}">INSTRUCCIONES: escribe usuario y correo email, e ingresa.</a> -->
+
+        </form>
+    </div>
+</body>
+</html>

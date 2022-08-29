@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url(../img/pokedex1.jpg) center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+.login-box {
+    width: 320px;
+    height: 420px;
+    /* Para fondo transparente */
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -45%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 7%;
+}
+
+.login-box .avatar {
+    /* Para agrandar o disminuir tamaño */
+    width: 100px;
+    height: 100px;
+    /* Para redondear forma */
+    border-radius: 50%;
+    /* Para llevarlo hasta en frente */
+    position: absolute;
+    /* Para centrarlo */
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+.login-box h1 {
+    margin: 0%;
+    /* Para que tenga un pequeño espaciado hacia abajo */
+    padding: 0 0 17px;
+    text-align: center;
+    font-size: 30px;
+}
+
+
+.login-box label {
+    /* Para quitar espaciados */
+    margin: 0%;
+    padding: 0%;
+    /* Para remarcar texto en negritas */
+    font-weight: bold;
+    display: block;
+}
+
+/* Para estilizar todos los inputs */
+.login-box input {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+/* Para estilizar el texto a ingresar y el password */
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    border: none;
+    /* Para la línea de abajo de texto */
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none;
+    height: 38px;
+    color: black;
+    font-size: 15px;
+}
+
+/* Para estilizar el botón submit */
+.login-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #a60b0b;
+    color: white;
+    font-size: 18px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.login-box a {
+    /* Para evitar decoración por defecto */
+    text-decoration: none;
+    font-size: 12px;
+    /* Para línea divisora/espaciado */
+    line-height: 15px;
+    color: black;
+    text-align: center;
+}
+
+h5 {
+     /* Para evitar decoración por defecto */
+     text-decoration: none;
+     border: none;
+     font-size: 13px;
+     /* Para línea divisora/espaciado */
+     line-height: 20px;
+     color: black;
+     text-align: left;
+     position: relative;
+     top: -22.5px;
+}
+
+.login-box input[type="submit"]:hover {
+    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.6);
+}

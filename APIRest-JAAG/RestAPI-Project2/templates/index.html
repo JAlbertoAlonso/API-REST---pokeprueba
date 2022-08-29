@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{url_for('static', filename='img/pixel.jpg')}}">
+
+</head>
+<body>
+    <div class="stripes">
+        <form action="">
+            <button class="restart" type="submit" formaction="/">
+                <a href="/">Restart</a>
+            </button>
+        </form>
+    </div>
+    <div class="stripes2">
+        
+    </div>
+    <div class="stripes3">
+        
+    </div>
+    <div class="red">
+        <div class="img">
+            <img src="{{url_for('static',filename='img/espera.png')}}" alt="">
+            <h1>Pokedex</h1>
+        </div>
+        
+    </div>
+    <div class="stripes3">
+        
+    </div>
+    <div class="stripes2">
+        
+    </div>
+
+    <section class="container">
+        <table>
+            <tr class="header">
+
+                <th class="one">
+                    <div class="login-box">
+                        <form action="/pokedex/" class="login" method="POST">
+                            <!-- Pokemon -->
+                            <h1 for="pokemon">Pokemon</h1>
+                            <input type="text" name="pokefound" placeholder="Pokemon name" autofocus>
+                            <input type="submit" value="Search">
+                        </form>
+                    </div>
+                </th>
+
+                <th class="two">
+                    <section class="container2">
+                        <article>
+
+                            {% if data.name %}
+                                <h1>{{data.name}}</h1>
+                            {% else %}
+                                <h1>Pokemon name</h1>
+                            {% endif %}
+
+                            {% if data.img %}
+                                <img class="img-fluid" src="{{data.img}}" alt="">
+                            {% else %}
+                                <img src="{{url_for('static',filename='img/coin.png')}}" alt="">
+                            {% endif %}
+
+                            <section class="container3">
+                                {% if data.type %}
+                                    <div class="type">Type: 
+                                    {% for t in data.type %}
+                                        <h3>{{t}}</h3>
+                                    {%endfor%}
+                                    </div>
+                                {% else %}
+                                    <div class="type">Type: 
+                                        <br>
+                                        <br>
+                                        None
+                                    </div>
+                                {% endif %}
+
+                                {% if data.type %}
+                                    <div class="ability">Abilities:
+                                    {% for a in data.abilities %}
+                                        <h4>{{a}}</h4>
+                                    {% endfor %}
+                                    </div>
+                                {% else %}
+                                    <div class="ability">Abilities: 
+                                        <br>
+                                        <br>
+                                        None
+                                    </div>
+                                {% endif %}
+
+                            </section>
+                        </article>
+                    </section>
+                </th>
+                <th class="three">
+                    <section class="container4">
+                        <article>
+                            <h1>
+                                Summary
+                            </h1>
+                            <h3>Id: {{data.id}}</h3>
+                            <h3>Height: {{data.height}}</h3>
+                            <h3>Weight: {{data.weight}}</h3>
+                            <h3>HP: {{data.hp}}</h3>
+                            <h3>Attack points: {{data.p_attack}}</h3>
+                            <h3>Defense points: {{data.p_defense}}</h3>
+                            <h3>Special att. points: {{data.p_s_attack}}</h3>
+                            <h3>Special def. points: {{data.p_s_defense}}</h3>
+                        </article>
+                    </section>
+                </th>
+            </tr>
+            
+        </table>
+    </section>
+    
+    
+</body>
+</html>
